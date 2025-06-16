@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./maDB.db"
+}
+
+
+model User{
+  login String 
+  email String @id
+  password String
+  token String
+  like Vol[] 
+}
+
+model Ville{
+  nom String @id
+  pays String
+  lat Float
+  lon Float
+  image String
+  lieux Lieux[]
+  aeros Airport[]
+}
+
+model Lieux{
+  nom String @id
+  description String
+  adresse String
+  auteur String
+  avis String
+  rate Int
+  temps String
+  image String
+  ville Ville @relation(fields: [villenom], references: [nom])
+  villenom String
+}
+
+model Vol{
+  number String 
+  destination String
+  airline String
+  terminal String
+  heurelocale String
+  model String
+  id  Int   @id   @default(autoincrement()) @unique
+  aero Airport @relation(fields: [aeroid], references: [id])
+  aeroid String
+  like User[]
+
+}
+
+model Airport{
+  id String @id
+  nom String
+  ville Ville @relation(fields: [ville_nom], references: [nom])
+  ville_nom String
+  vols Vol[]
+  
+}
+

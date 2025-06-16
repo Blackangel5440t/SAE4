@@ -1,0 +1,28 @@
+### REST Client
+
+
+### POST /user
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "login": "Test",
+    "email": "test.test@gmail.com",
+    "password": "testsae",
+}
+
+
+### GET /user OK
+GET http://localhost:3000/user/test.test@gmail.com
+
+
+### GET /user KO
+GET http://localhost:3000/user/tes.tes@gmail.com
+
+
+
+
+
+
+### GET /
+http://localhost:3000/
