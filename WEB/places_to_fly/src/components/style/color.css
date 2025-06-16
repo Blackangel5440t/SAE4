@@ -1,0 +1,13 @@
+#light {
+    --blanc: #fff;
+    --blanc-popup-1: #ebebeb;
+    --noir: #000000;
+    --button-hover-black: #464646;
+
+    --main-grey-1: #D9D9D9;
+    --main-grey-2: #b4b4b4;
+
+    --main-blue-2: #719ECE;
+
+    --backgroundImage: url(../img/background-light-mode2.jpg);
+}
